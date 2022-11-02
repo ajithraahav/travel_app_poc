@@ -18,11 +18,11 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    AnimationController controller =
-        AnimationController(
-          vsync: this, 
-          duration: Duration(milliseconds: 700),
-          reverseDuration: Duration(milliseconds: 700));
+    AnimationController controller1 = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: 700),
+        reverseDuration: Duration(milliseconds: 300));
+
     return Scaffold(
         body: Container(
             width: double.maxFinite,
@@ -123,7 +123,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                         children: [
                           AppText(
                             text:
-                                'Newhaven Lighthouse in\nEdinburgh, United Kingdom',
+                                'Newhaven Lighthocontext1use in\nEdinburgh, United Kingdom',
                             size: 20,
                             weight: FontWeight.w500,
                             color: Colors.black,
@@ -219,7 +219,8 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                 child: InkWell(
                                   borderRadius: BorderRadius.circular(50),
                                   onTap: () {
-                                    bottomSheet1(context, controller);
+                                    bottomSheet1(
+                                        context, controller1, controller1);
                                   },
                                   child: Ink(
                                     padding: EdgeInsets.all(40),

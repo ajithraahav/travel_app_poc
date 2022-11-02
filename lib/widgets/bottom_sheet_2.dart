@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:travelslide/widgets/app_text.dart';
 
-Future<void> bottomSheet2(context, controller) {
-  Size size = MediaQuery.of(context).size;
+Future<void> bottomSheet2(context1, controller) {
+  Size size = MediaQuery.of(context1).size;
   return showModalBottomSheet<void>(
     transitionAnimationController: controller,
-    context: context,
+    context: context1,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
     builder: (BuildContext context) {
@@ -124,20 +124,17 @@ Future<void> bottomSheet2(context, controller) {
                   ),
                 )),
             Positioned(
-              bottom: size.height * 0.43,
-              left: size.width * 0.25,
-              child:
-              Container(
-                width: 180,
-                height: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.grey,
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/img-slide1.jpg'),
-                    fit: BoxFit.cover
-                    )
-                ))),
+                bottom: size.height * 0.43,
+                left: size.width * 0.25,
+                child: Container(
+                    width: 180,
+                    height: 180,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.grey,
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/img-slide1.jpg'),
+                            fit: BoxFit.cover)))),
             SizedBox(
               height: 30,
             ),

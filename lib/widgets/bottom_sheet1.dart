@@ -1,16 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
+import 'package:travelslide/pages/detail_page.dart';
 import 'package:travelslide/widgets/app_text.dart';
 import 'package:travelslide/widgets/bottom_sheet_2.dart';
 import 'package:travelslide/widgets/calendar_widget.dart';
+import 'package:travelslide/widgets/custom_page_route.dart';
 import 'package:travelslide/widgets/timing_checkbox.dart';
 
-
-
-Future<void> bottomSheet1(context, controller) {
-  Size size = MediaQuery.of(context).size;
+Future<void> bottomSheet1(context1, controller1, controller2) {
+  Size size = MediaQuery.of(context1).size;
   return showModalBottomSheet<void>(
-    transitionAnimationController: controller,
-    context: context,
+    transitionAnimationController: controller1,
+    context: context1,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
     builder: (BuildContext context) {
@@ -82,8 +84,11 @@ Future<void> bottomSheet1(context, controller) {
               color: Colors.transparent,
               child: InkWell(
                 borderRadius: BorderRadius.circular(50),
-                onTap: () {
-                  bottomSheet2(context, controller);
+                onTap: () async {
+                  Navigator.pop(context);
+                  Navigator.pop(context1);
+                  await Future.delayed(Duration(milliseconds: 350));
+                  bottomSheet2(context1, controller2);
                 },
                 child: Ink(
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
